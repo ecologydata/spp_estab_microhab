@@ -1,0 +1,26 @@
+"Species","Number of Germinants","2018-19 survivors","2019-20 survivors","2018-20 survivors","full_species","range","recruitmentRange","survivalRange","survivalprop18surv20Range"
+"ABIGRA",20,2,4,NA,"Abies grandis","515-1098","824-1879","1811-1879",NA
+"ABILAS",40,14,6,10,"Abies lasiocarpa","794-2028","794-1897","1495-1879","1879-1879"
+"ANEOCC",98,88,78,NA,"Anemone occidentalis","794-2028","794-1879","1474-1879",NA
+"CARSTI",2,NA,4,NA,"Carex stipata","515-1474","1036-1036","1036-1036",NA
+"ERILAN",118,30,4,18,"Eriophyllum lanatum","515-1586","904-1514","904-1507","904-904"
+"ERIPER",970,382,52,364,"Erigeron peregrinus","526-2028","515-1628","515-1514","515-1514"
+"LUPLAT",156,58,4,36,"Lupinus latifolius","515-1897","794-2028","1098-2028","1098-2028"
+"MAHAQU",28,16,4,8,"Mahonia aquifolium","515-1586","515-1507","515-1507","535-1507"
+"MAHNER",26,6,8,4,"Mahonia nervosa","515-1122","515-1474","526-1474","672-1093"
+"PICENG",28,2,2,2,"Picea engelmannii","526-2028","744-1514","1122-1122","1122-1122"
+"PICSIT",16,4,2,4,"Picea sitchensis","515-1474","824-1879","824-1817","824-1122"
+"PINPON",10,2,NA,NA,"Pinus ponderosa","515-1586","1098-1879","1098-1098",NA
+"RUBSPE",14,8,4,6,"Rubus spectabilis","515-1586","904-1474","904-1108","1108-1108"
+"RUBURS",196,44,10,26,"Rubus ursinus","515-535","515-1585","515-1507","526-1507"
+"SAMCER",24,4,2,NA,"Sambucus cerulea","515-1474","526-535","526-526",NA
+"SAMRAC",52,4,14,4,"Sambucus racemosa","515-2028","672-1514","526-672","526-672"
+"SORSIT",568,290,52,254,"Sorbus sitchensis","515-2028","526-2028","672-2028","672-2028"
+"TELGRA",740,154,82,88,"Tellima grandiflora","515-1474","515-1628","515-1522","515-1514"
+"TOLMEN",878,198,150,98,"Tolmiea menziesii","515-1122","515-2028","515-1514","515-1514"
+"VACDEL",310,66,66,18,"Vaccinium deliciosum","526-2028","515-1633","515-1633","515-950"
+"VACPAR",624,2,290,2,"Vaccinium parvifolium","515-1122","515-1474","515-1339","824-824"
+"MAIDIL",NA,2,NA,NA,"Maianthemum dilatum","515-1586",NA,NA,NA
+"PINCON",NA,NA,NA,NA,"Pinus contorta","515-2028",NA,NA,NA
+"MAIRAC",NA,NA,NA,NA,"Maianthemum racemosum","515-1586",NA,NA,NA
+"CARSPE",NA,NA,NA,NA,"Carex spectabilis","526-2028",NA,NA,NA

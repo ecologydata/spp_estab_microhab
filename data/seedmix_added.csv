@@ -1,0 +1,26 @@
+﻿species,treatment,weight_add,num_add,purity,indiv_seed_wt,notes
+ABIGRA,Winner,NA,20,NA,0.024723404,
+ABILAS,Loser,NA,20,NA,0.0262,
+ANEOCC,Loser,0.384,NA,0.65111759,0.001717949,
+CARSPE,Loser,0.18,NA,0.90775,0.000451707,weighted average
+CARSTI,Winner,0.2501,NA,0.997,0.000821945,weighted average
+ERILAN,Winner,0.2505,NA,0.997975709,0.005477778,
+ERIPER,Loser,0.5905,NA,0.490636364,0.000285526,"weighted average. Note - used the wrong purity so added more than we should have (0.04 grams, about 20% more than we should have)"
+LUPLAT,Loser,NA,22,NA,0.014777505,weighted average
+MAHAQU,Loser,0.2536,NA,0.986,0.011418211,weighted average
+MAHNER,Winner,0.2507,NA,0.9974,0.014121369,weighted average
+MAIDIL,Winner,NA,20,NA,0.01745,
+MAIRAC,Loser,NA,15,NA,0.03963,
+PICENG,Loser,0.2556,NA,0.97810219,0.003329193,
+PICSIT,Winner,0.2662,NA,0.939138161,0.00245814,
+PINCON,Loser,0.2721,NA,0.918699187,0.003323529,
+PINPON,Winner,NA,20,NA,0.034916084,
+RUBPAR,Loser,0.2778,NA,0.888727905,0.001000275,weighted average
+RUBURS,Winner,0.2522,NA,0.99137931,0.001554054,
+SAMCER,Winner,0.2528,NA,0.989,0.002888577,weighted average
+SAMRAC,Loser,0.2527,NA,0.9895,0.001796338,weighted average
+SORSIT,Winner,0.28,NA,0.872619048,0.003778351,
+TELGRA,Loser,0.25,NA,1,5.37E-05,
+TOLMEN,Winner,0.2525,NA,0.99,7.16E-05,
+VACDEL,Loser,0.2676,NA,0.922573373,0.000175403,weighted average
+VACPAR,Winner,0.25,NA,1,0.000164436,

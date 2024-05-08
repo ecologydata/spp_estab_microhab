@@ -1,5 +1,6 @@
 # Aims: MANUSCRIPT FIGURES
 
+# Author: Nathalie Chardon, Kavya Pradhan
 # Date created: 11 May 2023
 # Date updated: 27 Feb 2024
 
@@ -22,14 +23,18 @@ library(stats)
 
 rm(list=ls()) 
 
+# # WORKING DIRECTORIES # #
+# indir <- "/Users/kavyapradhan/Documents/GitHub/CL_seedaddition/"
+# setwd('/Users/kavyapradhan/Documents/GitHub/CL_seedaddition/')
+
 
 # # INPUT FILES # #
-load('outputs/ALL_mod_avg.RData') #model averaging results for all models (ms_tables.R)
-load('data/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
-load('data/thermal2elevRL.RData') #thermal to elev range limit per species (therm2elevRL.R)
-load('outputs/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
-load('outputs/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
-load('outputs/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
+load('outputs/mod_avg_June2023/ALL_mod_avg.RData') #model averaging results for all models (ms_tables.R)
+load('data/tidy/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
+load('data/tidy/thermal2elevRL.RData') #thermal to elev range limit per species (therm2elevRL.R)
+load('outputs/ms_results_Jul2023/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
 
 
 # # OUTPUT FILES # #
@@ -43,7 +48,7 @@ load('outputs/pred_sdlg.RData') #seedling predictions at plot level (microhab_su
 
 ####################################################################################################
 
-# [created in PP on computer: Cascades/manuscript/figs/conceptual.pptx]
+# [created in PP on NC's computer: Cascades/manuscript/figs/conceptual.pptx]
 
 ####################################################################################################
 
@@ -52,7 +57,7 @@ load('outputs/pred_sdlg.RData') #seedling predictions at plot level (microhab_su
 ####################################################################################################
 
 # Data
-load('data/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
+load('data/tidy/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
 
 dat <- census.spp %>% 
   distinct(census.spp$rep, .keep_all = TRUE) %>% #keep only rep-level data
@@ -323,7 +328,8 @@ fig <- grid.arrange(arrangeGrob(canopycont, f_b, c_n, whc, tmoist_avgmin, t1_avg
                      bottom = textGrob('Elevation [m]', gp = gpar(fontsize = tt))
 )
 
-ggsave('figs/microhab_quadelev.pdf', fig, width = 8, height = 8, units = c('in'))
+#ggsave('outputs/ms_results_Jul2023/microhab_quadelev.jpeg', fig, width = 8, height = 8, units = c('in'))
+ggsave('outputs/ms_revisions_Dec2023/microhab_quadelev.pdf', fig, width = 8, height = 8, units = c('in'))
 
 
 
@@ -334,7 +340,7 @@ ggsave('figs/microhab_quadelev.pdf', fig, width = 8, height = 8, units = c('in')
 ####################################################################################################
 
 # Data
-load('outputs/ALL_mod_avg_SIMPLE.RData') #model averaging results for all models (ms_tables.R)
+load('outputs/ms_results_Jul2023/ALL_mod_avg_SIMPLE.RData') #model averaging results for all models (ms_tables.R)
 
 # Number of times each parameter used in model in long DF format 
 #making dd.tab.simple df long so that parameter values can be grouped by +/- in stacked bar graph
@@ -487,7 +493,7 @@ sdlg2yr <- dd.simple.long %>%
                                      vjust = 0.4, #adjust L-R position of universal y-axis
                                      gp = gpar(fontsize = 16)))) #set font size for universal y-axis
 
-ggsave('figs/param_summaries.pdf', fig, width = 8, height = 6, units = 'in')
+ggsave('outputs/ms_revisions_Dec2023/param_summaries.pdf', fig, width = 8, height = 6, units = 'in')
 
 
 
@@ -499,9 +505,9 @@ ggsave('figs/param_summaries.pdf', fig, width = 8, height = 6, units = 'in')
 ####################################################################################################
 
 # Data
-load('outputs/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
-load('outputs/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
-load('outputs/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
 
 # Theme
 pp <- c(2, 5) #point size
@@ -602,8 +608,9 @@ plot6 <- dat %>%
 ## 1-YEAR SEEDLING SURV
 cc <- c('#008000', '#8fbc8f', 'black', '#a9a9a9') #points color (https://html-color.codes/green)
 
+### KP added ###
 pred.sdlg$region <- as.character(pred.sdlg$region)
-
+####
 
 dat <- pred.sdlg %>% 
   mutate(surv1yr = if_else(is.na(surv1yr), -1, surv1yr)) %>% #give numerical values to NA values for point size
@@ -657,7 +664,7 @@ fig <- grid.arrange(arrangeGrob(plot1+ theme(legend.position="none"), plot2, plo
                     bottom = textGrob('Elevation [m]', gp = gpar(fontsize = tt.leg))
 )
 
-ggsave('figs/suitability-preds.pdf', fig, width = 8, height = 8, units = c('in'))
+ggsave('outputs/ms_revisions_Dec2023//suitability-preds.pdf', fig, width = 8, height = 8, units = c('in'))
 
 
 
@@ -668,7 +675,7 @@ ggsave('figs/suitability-preds.pdf', fig, width = 8, height = 8, units = c('in')
 
 ####################################################################################################
 
-## Manually created on computer.
+## Manually created on KG's computer.
 
 
 
@@ -679,9 +686,11 @@ ggsave('figs/suitability-preds.pdf', fig, width = 8, height = 8, units = c('in')
 
 ####################################################################################################
 
+# Note: germrate calculated by KG in scripts/range_position/prep/3_germ_rate_calc.R
+
 # Data
-load('data/census_spp.Rdata') # census data for species 2018-2022
-seedDat <- read_csv('data/census_spp_seed_sources.csv')
+load('data/tidy/census_spp.Rdata') # census data for species 2018-2022
+seedDat <- read_csv('data/tidy/census_spp_seed_sources.csv')
 
 # Change LUPLAT seed source to 'both' to correct data entry error from LUPLAT/LUPARC
 seedDat <- seedDat %>% 
@@ -727,7 +736,7 @@ germination_boxplot <- ggplot(census_plus_germ, aes(seed_source, germrate, color
 # Combine plots and save
 (fig <- grid.arrange(germ_above_zero, germination_boxplot, nrow = 1))
 
-ggsave('figs/seed_source.pdf', fig, width = 8, height = 4, units = 'in')
+ggsave('outputs/ms_revisions_Dec2023/seed_source.pdf', fig, width = 8, height = 4, units = 'in')
 
 
 # Histogram by species
@@ -762,11 +771,11 @@ for (i in 1:length(v.spp)) {
          title = paste(v.spp[i])) +
     mytheme
   
-  ggsave(paste0("figs/germrate", v.spp[i],".pdf"), gplot)
+  ggsave(paste0("outputs/ms_revisions_Dec2023/germrate", v.spp[i],".pdf"), gplot)
 }
 
 
-# Plots manually combined with (a) and (b) in PP on computer
+# Plots manually combined with (a) and (b) in PP on NC's computer
 
 # Tukey-Kramer test to test which group means are different
 TukeyHSD(aov(germrateANOVA))
@@ -781,7 +790,7 @@ TukeyHSD(aov(germrateANOVA))
 ####################################################################################################
 
 # Data 
-load('data/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
+load('data/tidy/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
 
 dat2 <- census.spp %>% 
   select(region, site, site1, species, rel_rec, canopycont, f_b, whc, c_n, tmoist_avgmin, #filter to env variables used in model selection
@@ -792,7 +801,7 @@ dat2 <- census.spp %>%
 pp <- 4 #point size
 tt <- 12 #text size
 tt.leg <- 14 #legend & title size
-cc <- c('#008000', '#8fbc8f') #points color (https://html-color.codes/green)
+cc <- c('#008000', 'black') #points color (https://html-color.codes/green)
 
 mytheme <- theme(axis.title.x = element_text(size = tt), axis.text.x = element_text(size = tt, colour = 'black'),
                  axis.title.y = element_text(size = tt), axis.text.y = element_text(size = tt, colour = 'black'),
@@ -844,7 +853,7 @@ pca_plot <- autoplot(results2, loadings = T,  loadings.label = F, loadings.label
 #   mytheme + scale_shape_manual(values = c(1,2))  #with shape = region and color = 1-15 site in each transect
 
 
-pdf('figs/allspeciesPCA_colorRegion.pdf')
+pdf('outputs/ms_revisions_Apr2024/allspeciesPCA_colorRegion.pdf')
 pca_plot
 dev.off()
 
@@ -858,7 +867,7 @@ dev.off()
 ####################################################################################################
 
 # Data
-load('outputs/ALL_mod_avg_SIMPLE.RData') #model averaging results for all models (ms_tables.R)
+load('outputs/ms_results_Jul2023/ALL_mod_avg_SIMPLE.RData') #model averaging results for all models (ms_tables.R)
 
 # Number of times each parameter used in model in long DF format 
 dd.simple.long <- gather(dd.simple, parameter, effect, 'Year':'Spring Days with Snow^2', factor_key=TRUE) #making dd.tab.simple df long so that parameter values can be grouped by +/- in stacked bar graph
@@ -1115,7 +1124,7 @@ fig <- grid.arrange(one, two, three, four, five, six, seven, eight, nine, ten, e
                                     gp = gpar(fontsize = 16))) #set font size for universal y-axis
 
 
-ggsave('figs/param_spp.pdf', fig, width = 8, height = 12, units = 'in')
+ggsave('outputs/ms_revisions_Dec2023/param_spp.pdf', fig, width = 8, height = 12, units = 'in')
 
 
 
@@ -1127,7 +1136,7 @@ ggsave('figs/param_spp.pdf', fig, width = 8, height = 12, units = 'in')
 ####################################################################################################
 
 # Data
-load('outputs/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_bin.RData') #binary recruitment predictions at plot level (microhab_suitab.R)
 
 # Theme
 pp <- c(1, 3) #point size
@@ -1251,7 +1260,7 @@ fig <- grid.arrange(arrangeGrob(plot1, plot2, plot3, plot4, plot5, plot6, plot7,
 )
 
 
-ggsave('figs/suitability-recruitprob.pdf', fig, width = 8, height = 4.75, units = c('in'))
+ggsave('outputs/ms_revisions_Dec2023/suitability-recruitprob.pdf', fig, width = 8, height = 4.75, units = c('in'))
 
 
 
@@ -1263,7 +1272,7 @@ ggsave('figs/suitability-recruitprob.pdf', fig, width = 8, height = 4.75, units 
 ####################################################################################################
 
 # Data
-load('outputs/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_cont.RData') #continuous recruitment predictions at plot level (microhab_suitab.R)
 
 # Theme
 pp <- c(1, 3) #point size
@@ -1391,7 +1400,7 @@ fig <- grid.arrange(arrangeGrob(plot1, plot2, plot3, plot4, plot5, plot6, plot7,
                      bottom = textGrob('Elevation [m]', gp = gpar(fontsize = tt))
 )
 
-ggsave('figs/suitability-recruitcounts.pdf', fig,  width = 8, height = 4.75, units = c('in'))
+ggsave('outputs/ms_revisions_Dec2023/suitability-recruitcounts.pdf', fig,  width = 8, height = 4.75, units = c('in'))
 
 
 
@@ -1403,7 +1412,7 @@ ggsave('figs/suitability-recruitcounts.pdf', fig,  width = 8, height = 4.75, uni
 ####################################################################################################
 
 # Data
-load('outputs/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
+load('outputs/ms_results_Jul2023/pred_sdlg.RData') #seedling predictions at plot level (microhab_suitab.R)
 
 # Theme
 pp <- c(1, 3) #point size
@@ -1483,8 +1492,9 @@ plot5 <- dat %>%
 
 
 ## 2-YEAR SEEDLING SURVIVAL
+### KP added ###
 pred.sdlg$region <- as.character(pred.sdlg$region)
-
+####
 dat <- pred.sdlg %>% 
   mutate(prop18surv20 = if_else(is.na(prop18surv20), -1, prop18surv20)) %>% #give numerical values to NA values for point size
   mutate(region = if_else(prop18surv20 < 0 & region == 'MB', 'MB-NA', region)) %>% #different region name for NA for color
@@ -1552,9 +1562,7 @@ fig <- grid.arrange(arrangeGrob(plot1, plot2, plot3, plot4, plot5, plot6, plot7,
                     bottom = textGrob('Elevation [m]', gp = gpar(fontsize = tt))
 )
 
-ggsave('figs/suitability-sdlgsurv.pdf', fig, width = 8, height = 8, units = c('in'))
-
-
+ggsave('outputs/ms_revisions_Dec2023/suitability-sdlgsurv.pdf', fig, width = 8, height = 8, units = c('in'))
 
 
 ####################################################################################################
@@ -1564,7 +1572,7 @@ ggsave('figs/suitability-sdlgsurv.pdf', fig, width = 8, height = 8, units = c('i
 ####################################################################################################
 
 # Data
-load('data/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
+load('data/tidy/census_spp.RData') #adds relative recruitment to census.tms (microhab_analysis_prep.R)
 
 dat <- census.spp %>% 
   distinct(census.spp$rep, .keep_all = TRUE) #keep only rep-level data
@@ -1618,5 +1626,5 @@ plotLegend <- g_legend(MAP_elev)
 fig <- grid.arrange(arrangeGrob(MAT_elev, MAP_elev + theme(legend.position = "none"), nrow = 1), plotLegend, heights = c(10,2), 
                     bottom = textGrob('Elevation [m]', gp = gpar(fontsize = tt)))
 
-ggsave('figs/MAT_MAP_elev.pdf', fig, width = 8, height = 4, units = c('in'))
+ggsave('outputs/ms_revisions_Dec2023/MAT_MAP_elev.pdf', fig, width = 8, height = 4, units = c('in'))
 

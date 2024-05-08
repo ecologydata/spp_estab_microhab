@@ -1,8 +1,8 @@
-last updated: 6 March 2024
+last updated: 8 May 2024
 
 # Microhabitat Analyses
 
-Description of workflow for "Variable species establishment in response to microhabitat indicates different likelihoods of climate-driven range shifts". Chardon et al. 2024. Ecography.
+Description of workflow for Chardon et al. 2024. Variable species establishment in response to microhabitat indicates different likelihoods of climate-driven range shifts. Ecography.
 
 
 ## Compiled data

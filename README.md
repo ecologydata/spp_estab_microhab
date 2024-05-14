@@ -7,6 +7,8 @@ Description of scripts and data for Chardon et al. 2024. Variable species establ
 
 ## Compiled data
 
+data/abbreviations.xlsx: description of all variables (not all used in scripts below) and species abbreviations
+
 data/census_sdlg.RData: yearly seedling survival + microhabitat variables
 
 data/census_spp.RData: yearly census data + microhabitat variables at quadrat level

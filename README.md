@@ -42,3 +42,8 @@ scripts/07_microhab_suitab.R: predict binary/continuous recruitment and 1/2 year
 scripts/ms_figs.R: figures for manuscript (note: 'figs/' folder is set up to run this script and save figures)
 
 scripts/ms_tables.R: tables for manuscript
+
+
+## Package versioning
+
+The folder renv/ contains the packages versions used to run the above scripts. To use, download the entire repository and run renv::update().

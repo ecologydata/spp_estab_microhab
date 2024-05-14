@@ -1,8 +1,8 @@
-last updated: 8 May 2024
+last updated: 14 May 2024
 
 # Microhabitat Analyses
 
-Description of workflow for Chardon et al. 2024. Variable species establishment in response to microhabitat indicates different likelihoods of climate-driven range shifts. Ecography.
+Description of scripts and data for Chardon et al. 2024. Variable species establishment in response to microhabitat indicates different likelihoods of climate-driven range shifts. Ecography. Files are ordered under their parent folder.
 
 
 ## Compiled data
@@ -11,7 +11,7 @@ data/census_sdlg.RData: yearly seedling survival + microhabitat variables
 
 data/census_spp.RData: yearly census data + microhabitat variables at quadrat level
 
-data/census_spp.RData: yearly census data + microhabitat variables at rep level
+data/census_rep.RData: yearly census data + microhabitat variables at rep level
 
 data/thermal2elevRL.RData: thermal to elev range limit per species
 
